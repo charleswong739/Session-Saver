@@ -1,6 +1,6 @@
 {
     "name" : "Session Saver",
-    "version" : "1.0",
+    "version" : "1.0.0",
     "description" : "Saves Chrome sessions for reload at a later date",
     "permissions" : ["tabs", "storage"],
     "browser_action" : {
