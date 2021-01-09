@@ -192,8 +192,10 @@ window.onload = function() {
 
     document.getElementById('load').addEventListener('click', function() {
         chrome.storage.sync.get(['wsdqxcefr4g5th6ynjumkilop'], function (result) {
-            var sesName = result.wsdqxcefr4g5th6ynjumkilop[result.wsdqxcefr4g5th6ynjumkilop.length - 1];
-            loadSession(sesName);
+            if (typeof result.wsdqxcefr4g5th6ynjumkilop != "undefined") {
+                var sesName = result.wsdqxcefr4g5th6ynjumkilop[result.wsdqxcefr4g5th6ynjumkilop.length - 1];
+                loadSession(sesName);
+            }
         });
     });
 
