@@ -1,0 +1,97 @@
+html {
+    box-sizing: border-box;
+    min-width: 200px;
+}
+
+body {
+    margin-left: 0;
+    margin-right: 0;
+    text-align: left;
+}
+
+.button {
+    position: relative;
+    cursor: pointer;
+    font-size: 15px;
+    padding: 0 0 0 10px;
+}
+
+.button:hover {
+    text-decoration: underline;
+}
+
+.entry_name {
+    cursor: pointer;
+    font-size: 15px;
+    padding-left: 0px;
+    margin-top: 2px;
+}
+
+.entry_name:hover {
+    text-decoration: underline;
+}
+
+.dark {
+    background-color: #696969;
+    color: white;
+}
+
+.collapsible {
+    cursor: pointer;
+    font-size: 15px;
+    padding: 0 0 10px 10px;
+    border: none;
+    outline: none;
+}
+
+.active, .collapsible:hover {
+    text-decoration: underline;
+}
+
+.content {
+    padding-bottom: 0;
+    padding-top: 0;
+    padding-left: 20px;
+    background-color: #999999;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.2s ease-out, padding-bottom 0.2s ease-out, padding-top 0.2s ease-out;
+
+}
+
+#edit_icon {
+    width: 16px;
+    height: 16px;
+    margin-top: -13px;
+    margin-right: 5px;
+    float: right;
+}
+
+.del_icon {
+    position: relative;
+    vertical-align: middle;
+    margin-bottom: 3px;
+    height: 12px;
+    width: 0px;
+    margin-right: 0px;
+    transition: width 0.2s ease-out, margin-right 0.2s ease-out;
+}
+
+.label {
+    font-size: 14px;
+}
+
+input:focus {
+    outline-width: 0;
+}
+
+.error {
+    position: relative;
+    animation: shake .1s linear;
+    animation-iteration-count: 3;
+}
+
+@keyframes shake {
+    0% { left: -5px; }
+    100% { right: -5px; }
+}

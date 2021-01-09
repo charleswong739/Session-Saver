@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="popup.css">
+        <script src="popup.js"></script>
+    </head>
+    <body class="dark">
+        <div id="content">
+            <div class="collapsible" id="save">
+                <span>Save current session as...</span>
+            </div>
+            <div class="content">
+                <label for="field" id="savelabel">Save as:</label>
+                <input type="text" id="field" maxlength="24">
+                <button type="submit" id="submitName">Save</button>
+            </div>
+            <div class="collapsible">
+                <span>Load saved session...</span>
+            </div>
+            <div class="content" id="entries">
+                <input id="edit_icon" type="image" alt="edit" src="edit_images/edit16.png">
+            </div>
+            <div class="button" id="load">
+                <span>Load latest saved session</span>
+            </div>
+        </div>
+    </body>
+</html>
