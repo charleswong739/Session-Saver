@@ -36,6 +36,9 @@ function deleteSession(sesName) {
 
 function validate(e) {
     var field = document.getElementById('field');
+
+    // window.confirm("Hello");
+
     if (field.value.trim() == '' || field.value.trim() == 'wsdqxcefr4g5th6ynjumkilop') {
         field.style.borderColor = '#ff4c4c';
 
@@ -76,25 +79,32 @@ function validate(e) {
                 num = 1;
             } else {
                 namelst = result.wsdqxcefr4g5th6ynjumkilop;
-                namelst.push(sesName);
+
+                if (Object.values(namelst).includes(sesName)) {
+                    if (window.confirm(`The session ${sesName} has already been saved. Do you want to overwrite it?`)) {
+                        chrome.windows.getAll({'populate': true}, saveSession);
+                    }
+                } else {
+                    namelst.push(sesName);
+                    chrome.windows.getAll({'populate': true}, saveSession);
+
+                    var nss = document.getElementById("Nss");
+
+                    if (nss != null) {
+                        nss.remove();
+                    }
+
+                    appendEntry(sesName);
+
+                    field.style.borderColor = null;
+                }
+
                 num += namelst.length;
             }
 
             chrome.storage.sync.set({wsdqxcefr4g5th6ynjumkilop: namelst});
             field.value = `session${num}`;
         })
-
-        chrome.windows.getAll({'populate': true}, saveSession);
-
-        var nss = document.getElementById("Nss");
-
-        if (nss != null) {
-            nss.remove();
-        }
-
-        appendEntry(sesName);
-
-        field.style.borderColor = null;
 
         closeContent(this);
 
